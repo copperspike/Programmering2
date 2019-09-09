@@ -24,11 +24,11 @@ public class U2Uppgift2 {
 		}
 
 		String temp = "";
-		if (i != 0) {
-			temp += s.substring(0, i);
-		}
+
+		temp += s.substring(0, i);
+
 		temp += s.charAt(s.length() - 1);
-		
+
 		temp += s.substring(i, s.length() - 1);
 
 		return reverse(temp, i + 1);
