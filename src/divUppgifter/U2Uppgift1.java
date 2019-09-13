@@ -21,7 +21,7 @@ public class U2Uppgift1 {
 
 		while (true) {
 
-			int temp = sc.nextInt();
+			double temp = sc.nextDouble();
 			if (temp == 0) {
 				break;
 			}
