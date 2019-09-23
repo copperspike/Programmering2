@@ -16,6 +16,7 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 	Button knapp1;
 	Scene scene;
 	Group root;
+	Rectangle bg;
 	
 	
 	public static void main(String[] args) {
@@ -26,10 +27,11 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		knapp1 = new Button("OK");
-		knapp1.setOnAction(this);
 		width = 300;
 		height = 300;
+		knapp1 = new Button("OK");
+		knapp1.setOnAction(this);
+		bg = new Rectangle(width, height, Color.BLACK);
 		root = new Group();
 		scene = new Scene(root, width, height);
 		
@@ -37,6 +39,7 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 		knapp1.setTranslateX(width / 2.0 - width /12.0);
 		knapp1.setTranslateY(height / 2.0 - height /12.0);
 		
+		root.getChildren().add(bg);
 		root.getChildren().add(knapp1);
 		
 		primaryStage.setScene(scene);
@@ -47,9 +50,17 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 	@Override
 	public void handle(ActionEvent event) {
 		if (event.getSource() == knapp1) {
-			Rectangle röd = new Rectangle(width, height);
-			röd.setFill(Color.RED);
-			root.getChildren().add(röd);
+			root.getChildren().clear();
+			
+			if (!bg.getFill().equals(Color.RED)) {
+				bg.setFill(Color.RED);
+				root.getChildren().add(bg);
+				root.getChildren().add(knapp1);
+			} else {
+				bg.setFill(Color.BLACK);
+				root.getChildren().add(bg);
+				root.getChildren().add(knapp1);
+			}
 		}
 	}
 
