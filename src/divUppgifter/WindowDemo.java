@@ -61,7 +61,7 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 			root.getChildren().add(knappar[1]);
 		} else if (event.getSource() == knappar[1]) {
 			
-			bg.setFill(Color.YELLOW);
+			bg.setFill(Color.rgb((int)(Math.random() * 255), (int)(Math.random() * 255), (int)(Math.random() * 255)));
 			root.getChildren().add(bg);
 			root.getChildren().add(knappar[2]);
 		} else if (event.getSource() == knappar[2]) {
