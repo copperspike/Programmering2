@@ -1,6 +1,6 @@
 package calculator;
 
-public abstract class AlgebraicProcessing {
+public class AlgebraicProcessing {
 
 	
 	
