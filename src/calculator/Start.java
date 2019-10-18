@@ -59,11 +59,6 @@ public class Start extends Application implements Layout {
 				placeSet = true;
 			} else
 
-			if (key.equals("=")) {
-				numpad.add(temp, i % 4 + 1, (int) Math.floor(i / 4.0));
-				placeSet = true;
-			} else
-
 			if (key.equals("\u00D7")) {
 				temp.setOnAction(event -> {
 					updateShow("*");
@@ -100,10 +95,19 @@ public class Start extends Application implements Layout {
 			} else
 
 			if (key.equals("=")) {
+				
+				numpad.add(temp, i % 4 + 1, (int) Math.floor(i / 4.0));
+				placeSet = true;
+				
 				temp.setOnAction(event -> {
-
+					String input = show.getText();
+					String output = AlgebraicProcessing.Equate(input);
+					
+					show.clear();
+					updateShow(output);
 				});
 				actionSet = true;
+				
 			}
 
 			// Defines the standard placement and action for buttons
