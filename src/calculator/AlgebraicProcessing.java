@@ -5,64 +5,56 @@ import java.util.HashMap;
 @SuppressWarnings("unused")
 public class AlgebraicProcessing {
 
-	public static String Equate (String input) {
+	public static String Equate(String input) {
+
+		String calculation = parenthesize(input);
+
+		return new String(calculate(calculation) + "");
+	}
+
+	private static String parenthesize(String incompleteCalculation) {
+		String calculation = "";
 		
-		String ordered = Parenthesize(input);
 		
-		return new String(calculate(ordered) + "");
+		
+		return calculation;
 	}
 	
-	private static String Parenthesize (String in) {
+	private static double calculate(String calculation) {
+		double val = 0;
 		
 		
-		return null;
+		return val;
 	}
-	
-	private static double calculate(String ordered) {
-		
-		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
-		
-		for (int i = 0; i < ordered.length(); i++) {
-			
+
+	private static double evaluate(String in) {
+		double val = 0;
+		for (int i = 0; i > in.length(); i++) {
+			if (in.charAt(i) == '+') {
+				val = Double.parseDouble(in.substring(0, i)) + Double.parseDouble(in.substring(i + 1));
+			} else if (in.charAt(i) == '-') {
+				val = Double.parseDouble(in.substring(0, i)) - Double.parseDouble(in.substring(i + 1));
+			} else if (in.charAt(i) == '*') {
+				val = Double.parseDouble(in.substring(0, i)) * Double.parseDouble(in.substring(i + 1));
+			} else if (in.charAt(i) == '/') {
+				val = Double.parseDouble(in.substring(0, i)) / Double.parseDouble(in.substring(i + 1));
+			} else if (in.charAt(i) == '\u221A') {
+				val = Double.parseDouble(in.substring(0, i)) * Double.parseDouble(in.substring(0, i));
+			} else if (in.charAt(i) == '\u00B2') {
+				val = Math.sqrt(Double.parseDouble(in.substring(i + 1)));
+			} else if (in.charAt(1) == '%') {
+				val = Double.parseDouble(in.substring(0, i)) % Double.parseDouble(in.substring(i + 1));
+			} else if (in.charAt(i) == '|') {
+				if (Double.parseDouble(in.substring(i + 1)) < 0) {
+					val = Double.parseDouble(in.substring(i + 1)) * -1;
+				} else {
+					val = Double.parseDouble(in.substring(i + 1));
+				}
+			}
 		}
-		
-		return 0;
+
+		return val;
+
 	}
-	
-	private static double add(double val1, double val2) {
-		return val1 + val2;
-	}
-	
-	private static double subtract(double val1, double val2) {
-		return val1 - val2;
-	}
-	
-	private static double multiply(double val1, double val2) {
-		return val1 * val2;
-	}
-	
-	private static double divide(double val1, double val2) {
-		return val1 / val2;
-	}
-	
-	private static double square(double val) {
-		return val * val;
-	}
-	
-	private static double root(double val) {
-		return Math.sqrt(val);
-	}
-	
-	private static double mod(double val1, double val2) {
-		return val1 % val2;
-	}
-	
-	private static double abs(double val) {
-		if (val < 0) {
-			return val * -1;
-		} else {
-			return val;
-		}
-	}
-	
+
 }
