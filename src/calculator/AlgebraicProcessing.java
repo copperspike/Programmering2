@@ -1,15 +1,35 @@
 package calculator;
 
-import java.util.HashMap;
-
 @SuppressWarnings("unused")
 public class AlgebraicProcessing {
 
 	public static String Equate(String input) {
+		
+		boolean error = false;
+		char[] allowedChars = {
+				'\u221A', '\u00B2', '(', ')', '+', '-', '\u00D7', '\u00f7', '1', '2', '3', '%', '4',
+				'5', '6', '|', '7', '8', '9', 'C', '.', '0', '='
+		};
+		
+		for (char inputChar: input.toCharArray()) {
+			boolean ok = false;
+			
+			for (char allow: allowedChars)
+			{
+				if (input.charAt(inputChar) == allow) {ok = true;}
+			}
+			if (!ok) {error= true;}
+		}
+		
+		if (error) {
+			
+			return null;
+			
+		} else {
+			String calculation = parenthesize(input);
 
-		String calculation = parenthesize(input);
-
-		return new String(calculate(calculation) + "");
+			return new String(calculate(calculation) + "");
+		}
 	}
 
 	private static String parenthesize(String incompleteCalculation) {
@@ -22,6 +42,7 @@ public class AlgebraicProcessing {
 	
 	private static double calculate(String calculation) {
 		double val = 0;
+		
 		
 		
 		return val;
