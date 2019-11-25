@@ -50,6 +50,11 @@ public class Evaluate {
 			}
 
 		}
+		
+		if (strategy == null) {
+			strategy = new OperatorReturn();
+			
+		}
 
 		Context context = new Context(strategy);
 
