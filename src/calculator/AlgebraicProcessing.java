@@ -1,6 +1,5 @@
 package calculator;
 
-@SuppressWarnings("unused")
 public class AlgebraicProcessing {
 
 	static char[] allowedChars = { '\u221A', '\u00B2', '(', ')', '+', '-', '\u00D7', '\u00f7', '=', '|', '.', '%', 'C', '1',

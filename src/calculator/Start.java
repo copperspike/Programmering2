@@ -103,8 +103,7 @@ public class Start extends Application implements Layout {
 					String input = show.getText();
 					String output = AlgebraicProcessing.Equate(input);
 					
-					show.clear();
-					updateShow(output);
+					replaceShow(output);
 				});
 				actionSet = true;
 				
@@ -129,8 +128,18 @@ public class Start extends Application implements Layout {
 	 * 
 	 * @param input
 	 */
-	private void updateShow(String input) {
+	public void updateShow(String input) {
 		show.textProperty().set(show.textProperty().get() + input);
+	}
+	
+	/**
+	 * Replaces the TextField show with the String input
+	 * 
+	 * @param input
+	 */
+	public void replaceShow(String input) {
+		show.clear();
+		updateShow(input);
 	}
 
 }
