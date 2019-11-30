@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
-interface Layout {
+public interface Layout {
 
 	int width = 6;
 	int height = 4;

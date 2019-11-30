@@ -40,7 +40,7 @@ public class Start extends Application implements Layout {
 		for (int i = 0; i < numpadKeys.length; i++) {
 
 			// Using a local variable makes the usage of updateInput() a lot easier
-			String key = new String(numpadKeys[i]);
+			String key = numpadKeys[i];
 
 			// placeSet & actionSet are made so that buttons with unusual placement or
 			// actions aren't redefined at the end of the for loop
