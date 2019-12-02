@@ -20,4 +20,9 @@ public class Hedgehog extends Animal {
     void eat() {
         System.out.println("Hedgehog is omnomnoming!");
     }
+
+    @Override
+    void walk() {
+        System.out.println("Traveling in style");
+    }
 }
