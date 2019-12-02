@@ -19,7 +19,6 @@ public class WindowDemo extends Application implements EventHandler<ActionEvent>
 	Rectangle bg;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		launch();
 	}
 
