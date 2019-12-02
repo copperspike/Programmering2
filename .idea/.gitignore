@@ -1,2 +1,7 @@
+*.xml
 # Default ignored files
+<<<<<<< HEAD
 /workspace.xml
+=======
+/workspace.xml
+>>>>>>> 72ff2bdf6206e47784e3fd0dfe9d46778f37eda9
