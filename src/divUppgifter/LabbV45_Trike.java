@@ -18,10 +18,9 @@ public class LabbV45_Trike extends LabbV45_Car {
 	@Override
 	public void Turn(int degrees) {
 		if (functioning) {
-			if (degrees > 30) {
+			health[0] -= degrees / 20.0;
+			if (health[0] < 0) {
 				Crash();
-			} else {
-				
 			}
 		}
 		
