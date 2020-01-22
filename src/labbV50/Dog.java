@@ -32,6 +32,22 @@ public class Dog extends Animal implements IWalk, ITricks, ISwim, IQuadrapedalMo
 	}
 
 	@Override
+	void move() {
+		trot();
+		skip();
+		jump();
+		roll();
+		run();
+		sit();
+		dash();
+	}
+
+	@Override
+	String getName() {
+		return "Its a dog!";
+	}
+
+	@Override
 	public void trot() {
 		System.out.println("Dog is a champion!");
 	}

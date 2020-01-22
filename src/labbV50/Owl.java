@@ -7,6 +7,20 @@ public class Owl extends Bird implements ITricks, ISkip {
 	}
 
 	@Override
+	void move() {
+		fly();
+		skip();
+		jump();
+		roll();
+		sit();
+	}
+
+	@Override
+	String getName() {
+		return "Its an owl!";
+	}
+
+	@Override
 	public void fly() {
 		System.out.println("Owl is gliding silently through the air!");
 	}
@@ -23,7 +37,7 @@ public class Owl extends Bird implements ITricks, ISkip {
 
 	@Override
 	public void roll() {
-		//not applicable!
+		System.out.println("Do a barrel roll!");
 	}
 
 	@Override

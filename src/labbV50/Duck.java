@@ -7,6 +7,22 @@ public class Duck extends Bird implements IFly, ISwim, ITricks, IWalk {
 	}
 
 	@Override
+	void move() {
+		fly();
+		jump();
+		swim();
+		roll();
+		sit();
+		run();
+		dash();
+	}
+
+	@Override
+	String getName() {
+		return "Its a duck!";
+	}
+
+	@Override
 	public void fly() {
 		System.out.println("Duck is soaring majestically!");
 	}

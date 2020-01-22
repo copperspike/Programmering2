@@ -19,6 +19,20 @@ public class Snake extends Animal implements ITricks, ISwim {
 	}
 
 	@Override
+	void move() {
+		slither();
+		jump();
+		swim();
+		roll();
+		sit();
+	}
+
+	@Override
+	String getName() {
+		return "Oh heck its a Snaek!";
+	}
+
+	@Override
 	public void setColor(String color)
 	{
 		if (color.equals("Grey"))

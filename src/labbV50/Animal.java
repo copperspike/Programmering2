@@ -15,6 +15,10 @@ public abstract class Animal {
 
 	abstract void eat();
 
+	abstract void move();
+
+	abstract String getName();
+
 	public String getColor() {
 		return _color;
 	}

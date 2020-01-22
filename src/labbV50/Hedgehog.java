@@ -22,6 +22,23 @@ public class Hedgehog extends Animal implements IWalk, ISkip, IQuadrapedalMotion
 	}
 
 	@Override
+	void move() {
+		trot();
+		skip();
+		swim();
+		run();
+		roll();
+		sit();
+		jump();
+		dash();
+	}
+
+	@Override
+	String getName() {
+		return "Sonic?";
+	}
+
+	@Override
 	public void trot() {
 		System.out.println("Hedgehog is trotting!");
 	}

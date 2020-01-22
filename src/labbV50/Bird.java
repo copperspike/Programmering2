@@ -17,4 +17,5 @@ public abstract class Bird extends Animal implements IFly{
 	void eat() {
 		System.out.println("Bird is peck-peck-pecking away!");
 	}
+
 }
