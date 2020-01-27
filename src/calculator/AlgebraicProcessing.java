@@ -1,9 +1,12 @@
 package calculator;
 
+import java.util.ArrayList;
+
 public class AlgebraicProcessing {
 
 	static char[] allowedChars = { '\u221A', '\u00B2', '(', ')', '+', '-', '\u00D7', '\u00f7', '=', '|', '.', '%', 'C', '1',
 			'2', '3', '4', '5', '6', '7', '8', '9', '0' };
+	static char[] allowedOperators = {'\u221A', '\u00B2', '(', ')', '+', '-', '\u00D7', '\u00f7', '=', '|', '%', 'C'};
 
 	public static String Equate(String input) {
 
@@ -13,13 +16,17 @@ public class AlgebraicProcessing {
 			boolean ok = false;
 
 			for (char allow : allowedChars) {
+
 				if (input.charAt(inputChar) == allow) {
 					ok = true;
 				}
+
 			}
+
 			if (!ok) {
 				error = true;
 			}
+
 		}
 
 		if (error) {
@@ -27,23 +34,38 @@ public class AlgebraicProcessing {
 			return null;
 
 		} else {
-			String calculation = parenthesize(input);
+			Double[] values = stringToValueArray(input);
+			Character[] operators = stringToOperatorArray(input);
+			boolean valueFirst = true;
 
-			return new String(calculate(calculation) + "");
+
+			// - CONTENT -
+
+			return calculate(values, operators, valueFirst) + "";
 		}
 	}
 
-	private static String parenthesize(String incompleteCalculation) {
-		
-		String calculation = "(" + incompleteCalculation.substring(0, search(incompleteCalculation));
-		
-		
-		
-		return calculation;
+	private static Character[] stringToOperatorArray(String input) {
+		ArrayList<Character> operators = new ArrayList<Character>();
+
+
+		Character[] output = new Character[operators.size()];
+
+		return output;
+	}
+
+	private static Double[] stringToValueArray(String input) {
+		ArrayList<Double> values = new ArrayList<Double>();
+
+
+
+		Double[] output = new Double[values.size()];
+
+		return output;
 	}
 
 	private static int search (String sub) {
-		int index = sub.length() - 1;
+		int index = -1;
 		boolean found = false;
 		for (int i = 0; i < sub.length(); i++) {
 			for (int j = 0; j < allowedChars.length - 10; j++) {
@@ -65,8 +87,10 @@ public class AlgebraicProcessing {
 		return index;
 	}
 
-	private static Double calculate(String calculation) {
+	private static Double calculate(Double[] values, Character[] operators, boolean valueFirst) {
 		double val = 0;
+
+
 
 		return val;
 	}
