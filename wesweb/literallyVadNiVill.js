@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 var http = require('http');
 var qs = require('querystring');
 var formOutput = '<html><body>'
@@ -12,13 +12,13 @@ var formOutput = '<html><body>'
   + '<div><input id="ListCommits" type="submit" value="List Commits" /></div></fieldset></form></body></html>';
 
 
-var clientDir = __dirname + '\\client\\'
+var clientDir = __dirname + '\\client\\';
 
 app.get('/', (req, res) => {
-  res.sendFile(clientDir + 'index.html')
+  res.sendFile(clientDir + 'index.html');
 })
 app.get('/index.css', (req, res) => {
-  res.sendFile(clientDir + 'index.css')
+  res.sendFile(clientDir + 'index.css');
 })
 app.post('/input.html', (req, res) => {
   if(req.method === "POST") {
@@ -28,7 +28,7 @@ app.post('/input.html', (req, res) => {
       });
       req.on('end', function() {
         var formData = qs.parse(requestBody);
-        console.log(formData.fname + ' ' + formData.lname)
+        console.log(formData.fname + ' ' + formData.lname);
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write('<!doctype html><html><head><title>response</title></head><body>');
         res.write('Thanks for the data!<br />First Name: '+formData.fname);
@@ -37,7 +37,10 @@ app.post('/input.html', (req, res) => {
       });
   }
 })
+app.get('/HelloKitty.jpg', (req, res) => {
+  res.sendFile(clientDir + 'HelloKitty.jpg');
+})
 
 
 
-app.listen(port, () => console.log(`Example app listening on port 3000!`))
+app.listen(port, () => console.log(`Example app listening on port 3000!`));
